@@ -9,11 +9,7 @@ export const Navbar: React.FunctionComponent = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <Link to="/">
-        <img
-          className="navbar__logo"
-          src="/logo.png"
-          alt="Whale Spotting logo"
-        />
+        <img className="navbar__logo" src="/logo.png" alt="BookLab logo" />
       </Link>
       <div>
         {!loginContext.isLoggedIn ? (

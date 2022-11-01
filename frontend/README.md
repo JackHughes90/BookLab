@@ -1,6 +1,6 @@
-# Whale Spotting Frontend
+# BookLab Frontend
 
-Welcome to the Whale Spotting frontend app! This is a React application that talks to the backend API.
+Welcome to the BookLab frontend app! This is a React application that talks to the backend API.
 
 ## Quickstart
 

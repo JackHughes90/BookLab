@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using WhaleSpotting.Models.Request;
-using WhaleSpotting.Services;
+using BookLab.Models.Request;
+using BookLab.Services;
 
-namespace WhaleSpotting.Controllers {
+namespace BookLab.Controllers {
   [ApiController]
   [Route("/debug")]
   public class DebugController : ControllerBase {

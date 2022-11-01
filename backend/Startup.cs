@@ -6,12 +6,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using WhaleSpotting.Repositories;
-using WhaleSpotting.Services;
+using BookLab.Repositories;
+using BookLab.Services;
 using System.Reflection;
 using System.IO;
 
-namespace WhaleSpotting
+namespace BookLab
 {
   public class Startup
   {
@@ -44,7 +44,7 @@ namespace WhaleSpotting
       {
         c.SwaggerDoc("v1", new OpenApiInfo
         {
-          Title = "WhaleSpotting",
+          Title = "BookLab",
           Version = "v1"
         });
 
@@ -54,7 +54,7 @@ namespace WhaleSpotting
         c.IncludeXmlComments(xmlPath);
       });
 
-      services.AddDbContext<WhaleSpottingDbContext>();
+      services.AddDbContext<BookLabDbContext>();
 
       services.AddTransient<IUserRepo, UserRepo>();
 
@@ -70,8 +70,7 @@ namespace WhaleSpotting
       {
         app.UseDeveloperExceptionPage();
         app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
-                                                "WhaleSpotting v1"));
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookLab v1"));
       }
 
       app.UseCors(AllowAnyOriginPolicy);
@@ -93,7 +92,7 @@ namespace WhaleSpotting
         .GetRequiredService<IServiceScopeFactory>()
         .CreateScope())
       {
-        using (var context = serviceScope.ServiceProvider.GetService<WhaleSpottingDbContext>())
+        using (var context = serviceScope.ServiceProvider.GetService<BookLabDbContext>())
         {
           context.Database.Migrate();
         }

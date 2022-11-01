@@ -1,11 +1,11 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
-using WhaleSpotting.Models.Database;
+using BookLab.Models.Database;
 
-namespace WhaleSpotting
+namespace BookLab
 {
-    public class WhaleSpottingDbContext : DbContext
+    public class BookLabDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
 

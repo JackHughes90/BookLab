@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace WhaleSpotting.Models.Database
+namespace BookLab.Models.Database
 {
     public class User
     {

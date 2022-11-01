@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
-namespace WhaleSpotting.Helpers
+namespace BookLab.Helpers
 {
     public static class AuthHelper
     {

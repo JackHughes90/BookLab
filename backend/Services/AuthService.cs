@@ -1,8 +1,8 @@
 using System;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using WhaleSpotting.Repositories;
+using BookLab.Repositories;
 
-namespace WhaleSpotting.Services
+namespace BookLab.Services
 {
     public interface IAuthService
     {

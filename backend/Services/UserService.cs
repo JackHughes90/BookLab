@@ -1,11 +1,11 @@
 using System;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using WhaleSpotting.Models.Database;
-using WhaleSpotting.Models.Request;
-using WhaleSpotting.Repositories;
+using BookLab.Models.Database;
+using BookLab.Models.Request;
+using BookLab.Repositories;
 
-namespace WhaleSpotting.Services
+namespace BookLab.Services
 {
     public interface IUserService
     {

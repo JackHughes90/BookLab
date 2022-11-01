@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WhaleSpotting.Models.Request {
+namespace BookLab.Models.Request {
   public class LoginUserRequest {
     [Required]
     public string Username { get; set; }

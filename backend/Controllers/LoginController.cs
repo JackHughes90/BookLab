@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
-using WhaleSpotting.Services;
-using WhaleSpotting.Helpers;
+using BookLab.Services;
+using BookLab.Helpers;
 
-namespace WhaleSpotting.Controllers {
+namespace BookLab.Controllers {
     [ApiController]
     [Route("/login")]
     public class LoginController : ControllerBase {

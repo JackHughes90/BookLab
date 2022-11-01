@@ -1,7 +1,7 @@
 using System.Linq;
-using WhaleSpotting.Models.Database;
+using BookLab.Models.Database;
 
-namespace WhaleSpotting.Repositories
+namespace BookLab.Repositories
 {
     public interface IUserRepo
     {
@@ -11,9 +11,9 @@ namespace WhaleSpotting.Repositories
 
     public class UserRepo : IUserRepo
     {
-        private readonly WhaleSpottingDbContext _context;
+        private readonly BookLabDbContext _context;
 
-        public UserRepo(WhaleSpottingDbContext context)
+        public UserRepo(BookLabDbContext context)
         {
             _context = context;
         }
