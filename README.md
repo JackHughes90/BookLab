@@ -48,7 +48,7 @@ First, set the required environment variables for connecting to the database.
 For local running in powershell, run:
 
 ```
-$env:DATABASE_URL = "postgres://username:password@localhost:5432/booklab"
+$env:DATABASE_URL = "postgres://booklab:booklab@localhost:5432/booklab"
 $env:USE_SSL = "false"
 ```
 

@@ -7,6 +7,9 @@ namespace BookLab
 {
     public class BookLabDbContext : DbContext
     {
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Genre> Genres { get; set; }
         public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(
