@@ -8,5 +8,6 @@ namespace BookLab.Models.Database
         public string Name { get; set; }
         public List<Book> Books { get; set; }
         public string Description { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

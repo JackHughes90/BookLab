@@ -10,7 +10,7 @@ namespace BookLab.Repositories
     public interface IAuthorRepo
     {
         Author GetAuthorById(int authorId);
-        Author AddAuthor(Author newAuthor);
+        Author CreateAuthor(Author createAuthorRequest);
         IEnumerable<Author> GetAllAuthors();
         // IEnumerable<Author> GetAuthorsByBookId(int bookId);
     }
@@ -38,7 +38,7 @@ namespace BookLab.Repositories
                 .OrderBy(a => a.Name);
         }
 
-        public Author AddAuthor(Author newAuthor)
+        public Author CreateAuthor(Author newAuthor)
         {
             var insertedAuthor = _context.Authors.Add(newAuthor);
             _context.SaveChanges();
