@@ -43,6 +43,8 @@ namespace BookLab.Repositories
         {
             return _context
                 .Books
+                .Include(b => b.Authors)
+                .Include(b => b.Genres)
                 .OrderBy(b => b.Title);
         }
     }
