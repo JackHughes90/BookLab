@@ -1,9 +1,42 @@
-nav.navbar {
-  height: 4em;
-  background-color: #bbffff;
-  padding: 0.5em;
+@import "../../constants.scss";
 
-  img.navbar__logo {
-    height: 100%;
+nav.navbar {
+  height: 2em;
+  background-color: #ff6d00;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  .navbar__logo {
+    height: 21px;
+    filter: invert(100%);
+  }
+
+  a {
+    font-size: 2em;
+    text-decoration: none;
+
+    &:visited {
+      color: $text-colour-light;
+    }
+
+    &:hover {
+      color: $text-colour-light;
+    }
+
+    &:link {
+      color: $text-colour-light;
+    }
+
+    &:active {
+      color: $text-colour-light;
+    }
+  }
+
+  p {
+    font-size: 32px;
+    color: $text-colour-light;
+    margin: 0;
   }
 }
