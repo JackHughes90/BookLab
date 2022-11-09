@@ -43,7 +43,7 @@ namespace BookLab.Controllers
         public async Task<ActionResult> CreateAuthorAsync([FromBody] CreateAuthorRequest createAuthorRequest)
         {
             var createdAuthor = await _authors.CreateAuthorAsync(createAuthorRequest);
-            return Created("/api", createdAuthor);
+            return Created("/authors", createdAuthor);
         }
     }
 }
