@@ -10,7 +10,7 @@ namespace BookLab.Repositories
     public interface IGenreRepo
     {
         Genre GetGenreById(int genreId);
-        Genre AddGenre(Genre newGenre);
+        Genre CreateGenre(Genre createGenreRequest);
         IEnumerable<Genre> GetAllGenres();
     }
 
@@ -43,6 +43,14 @@ namespace BookLab.Repositories
             return _context
                 .Genres
                 .OrderBy(g => g.Name);
+        }
+
+        public Genre CreateGenre(Genre newGenre)
+        {
+            var insertedGenre = _context.Genres.Add(newGenre);
+            _context.SaveChanges();
+
+            return insertedGenre.Entity;
         }
     }
 }

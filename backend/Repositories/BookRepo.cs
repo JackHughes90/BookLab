@@ -10,7 +10,7 @@ namespace BookLab.Repositories
     public interface IBookRepo
     {
         Book GetBookById(int bookId);
-        Book AddBook(Book newBook);
+        Book CreateBook(Book newBook);
         IEnumerable<Book> GetAllBooks();
     }
 
@@ -31,7 +31,7 @@ namespace BookLab.Repositories
                 .Single(b => b.Id == bookId);
         }
 
-        public Book AddBook(Book newBook)
+        public Book CreateBook(Book newBook)
         {
             var insertedBook = _context.Books.Add(newBook);
             _context.SaveChanges();

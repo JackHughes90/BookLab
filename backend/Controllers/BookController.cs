@@ -1,7 +1,9 @@
 using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BookLab.Models.Database;
 using BookLab.Models.Response;
+using BookLab.Models.Request;
 using BookLab.Services;
 
 namespace BookLab.Controllers
@@ -35,6 +37,13 @@ namespace BookLab.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [HttpPost("create")]
+        public async Task<ActionResult> CreateBookAsync([FromBody] CreateBookRequest createBookRequest)
+        {
+            var createdBook = await _books.CreateBookAsync(createBookRequest);
+            return Created("/api", createdBook);
         }
     }
 }
