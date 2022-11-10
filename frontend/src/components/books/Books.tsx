@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBooks, Book } from "../../clients/apiClient";
 import { BookCard } from "./BookCard";
-// import "./Books.scss";
+import "./Books.scss";
 
 export const Books: React.FunctionComponent = () => {
   const [books, setBooks] = useState<Book[]>();

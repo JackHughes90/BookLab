@@ -9,6 +9,22 @@ export interface Book {
   title: string;
   coverUrl: string;
   description: string;
+  authors: Author[];
+  genres: Genre[];
+}
+
+export interface Author {
+  id: number;
+  name: string;
+  books: Book[];
+  description: string;
+  imageUrl: string;
+}
+
+export interface Genre {
+  id: number;
+  name: string;
+  books: Book[];
 }
 
 export const getAllBooks = async (): Promise<Book[]> => {
