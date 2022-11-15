@@ -17,7 +17,7 @@ const Routes: React.FunctionComponent = () => {
       <Route exact path="/books">
         <Books />
       </Route>
-      <Route exact path="/books/:id">
+      <Route exact path="/books/:bookId">
         <BookSingle />
       </Route>
       {/* <Route exact path="/authors">

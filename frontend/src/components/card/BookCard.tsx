@@ -19,9 +19,6 @@ export const BookCard: React.FC<BookCardProps> = ({ book }) => {
           );
         })}
       </div>
-      {/* <div className="book-card__description">
-        {book.description}
-      </div> */}
       <div className="book-card__genres">
         {book.genres.map((genre) => {
           return (

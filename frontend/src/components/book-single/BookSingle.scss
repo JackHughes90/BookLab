@@ -1,0 +1,21 @@
+.book-profile {
+  height: 500px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &__info {
+    width: 350px;
+
+    h1 {
+      text-align: left;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: normal;
+    }
+  }
+}

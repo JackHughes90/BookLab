@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllBooks, Book } from "../../clients/apiClient";
-import { BookCard } from "./BookCard";
+import { BookCard } from "../card/BookCard";
 import "./Books.scss";
 
 export const Books: React.FunctionComponent = () => {

@@ -18,8 +18,8 @@ export const Navbar: React.FunctionComponent = () => {
       <Link to="/">BookLab</Link>
       <p>&#xb7;</p>
       <Link to="/books">Books</Link>
-      <p>&#xb7;</p>
-      <Link to="/">Authors</Link>
+      {/* <p>&#xb7;</p>
+      <Link to="/">Authors</Link> */}
       <div>
         {!loginContext.isLoggedIn ? (
           <div></div>
