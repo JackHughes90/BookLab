@@ -17,7 +17,7 @@ export const Navbar: React.FunctionComponent = () => {
       </Link>
       <Link to="/">BookLab</Link>
       <p>&#xb7;</p>
-      <Link to="/">Books</Link>
+      <Link to="/books">Books</Link>
       <p>&#xb7;</p>
       <Link to="/">Authors</Link>
       <div>

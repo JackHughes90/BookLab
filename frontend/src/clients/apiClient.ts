@@ -1,3 +1,5 @@
+import { Console } from "console";
+
 const backendUrl = process.env["REACT_APP_BACKEND_DOMAIN"];
 
 export interface ListResponse<T> {
@@ -31,4 +33,10 @@ export const getAllBooks = async (): Promise<Book[]> => {
   const response = await fetch(`${backendUrl}/books`);
   const bookListResponse: ListResponse<Book> = await response.json();
   return bookListResponse.items;
+};
+
+export const getBookById = async (bookId: string): Promise<Book> => {
+  const response = await fetch(`${backendUrl}/books/${bookId}`);
+  console.log(response);
+  return await response.json();
 };

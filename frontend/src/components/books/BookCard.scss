@@ -3,7 +3,13 @@
 }
 
 .book-card__genres {
-  font-size: 12px;
+  font-size: 10px;
   display: flex;
   gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &--genre {
+    text-overflow: ellipsis;
+  }
 }

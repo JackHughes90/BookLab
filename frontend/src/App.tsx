@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./components/homepage/Home";
 import { Books } from "./components/books/Books";
+import { BookSingle } from "./components/book-single/BookSingle";
 // import { Authors } from "./components/authors/Authors";
 import { Navbar } from "./components/navbar/Navbar";
 import { LoginManager } from "./components/login/LoginManager";
@@ -15,6 +16,9 @@ const Routes: React.FunctionComponent = () => {
       </Route>
       <Route exact path="/books">
         <Books />
+      </Route>
+      <Route exact path="/books/:id">
+        <BookSingle />
       </Route>
       {/* <Route exact path="/authors">
         <Authors />
