@@ -31,7 +31,7 @@ export const Navbar: React.FunctionComponent = () => {
       <p>&#xb7;</p>
       <Link to="/books">Books</Link>
       <p>&#xb7;</p>
-      <Link to="/">Authors</Link>
+      <Link to="/authors">Authors</Link>
       <div className="search-form">
         <input
           type="text"

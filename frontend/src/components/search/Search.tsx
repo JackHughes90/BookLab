@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom";
 import { BookCard } from "../card/BookCard";
 import { AuthorCard } from "../card/AuthorCard";
 import { Books } from "../books/Books";
-import { Authors } from "../authors/Authors";
 
 export const Search: React.FC = () => {
   const [books, setBooks] = useState<Book[]>();
