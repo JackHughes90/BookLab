@@ -13,6 +13,7 @@ namespace BookLab.Services
     public interface IBookService
     {
         Book GetBookById(int bookId);
+        IEnumerable<Book> GetBooksBySearch(string searchTerm);
         IEnumerable<Book> GetAllBooks();
         Task<Book> CreateBookAsync(CreateBookRequest request);
     }
@@ -29,6 +30,11 @@ namespace BookLab.Services
         public Book GetBookById(int bookId)
         {
             return _books.GetBookById(bookId);
+        }
+
+        public IEnumerable<Book> GetBooksBySearch(string searchTerm)
+        {
+            return _books.GetBooksBySearch(searchTerm);
         }
 
         public IEnumerable<Book> GetAllBooks()

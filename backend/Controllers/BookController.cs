@@ -22,7 +22,21 @@ namespace BookLab.Controllers
         public ActionResult<ListResponse<Book>> GetAllBooks()
         {
             var books = _books.GetAllBooks();
-            return new ListResponse<Book>(books);            
+            return new ListResponse<Book>(books);
+        }
+
+        [HttpGet("search/{searchTerm}")]
+        public ActionResult<ListResponse<Book>> GetBooksBySearch([FromRoute] string searchTerm)
+        {
+            try
+            {
+                var books = _books.GetBooksBySearch(searchTerm);
+                return new ListResponse<Book>(books);
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
         }
 
         [HttpGet("{bookId}")]

@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./components/homepage/Home";
+import { Authors } from "./components/authors/Authors";
 import { Books } from "./components/books/Books";
+import { Search } from "./components/search/Search";
 import { BookSingle } from "./components/book-single/BookSingle";
 // import { Authors } from "./components/authors/Authors";
 import { Navbar } from "./components/navbar/Navbar";
@@ -20,9 +22,12 @@ const Routes: React.FunctionComponent = () => {
       <Route exact path="/books/:bookId">
         <BookSingle />
       </Route>
-      {/* <Route exact path="/authors">
+      <Route exact path="/search/:searchTerm">
+        <Search />
+      </Route>
+      <Route exact path="/authors">
         <Authors />
-      </Route> */}
+      </Route>
     </Switch>
   );
 };

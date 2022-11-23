@@ -13,6 +13,7 @@ namespace BookLab.Services
     public interface IAuthorService
     {
         Author GetAuthorById(int authorId);
+        IEnumerable<Author> GetAuthorsBySearch(string searchTerm);
         IEnumerable<Author> GetAllAuthors();
         Task<Author> CreateAuthorAsync(CreateAuthorRequest request);
     }
@@ -29,6 +30,11 @@ namespace BookLab.Services
         public Author GetAuthorById(int authorId)
         {
             return _authors.GetAuthorById(authorId);
+        }
+
+        public IEnumerable<Author> GetAuthorsBySearch(string searchTerm)
+        {
+            return _authors.GetAuthorsBySearch(searchTerm);
         }
 
         public IEnumerable<Author> GetAllAuthors()

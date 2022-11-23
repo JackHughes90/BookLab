@@ -10,9 +10,9 @@ namespace BookLab.Repositories
     public interface IAuthorRepo
     {
         Author GetAuthorById(int authorId);
+        IEnumerable<Author> GetAuthorsBySearch(string searchTerm);
         Author CreateAuthor(Author createAuthorRequest);
         IEnumerable<Author> GetAllAuthors();
-        // IEnumerable<Author> GetAuthorsByBookId(int bookId);
     }
 
     public class AuthorRepo : IAuthorRepo
@@ -31,10 +31,17 @@ namespace BookLab.Repositories
                 .Single(a => a.Id == authorId);
         }
 
+        public IEnumerable<Author> GetAuthorsBySearch(string searchTerm)
+        {
+            return _context.Authors
+                .Include(a => a.Books)
+                .Where(b => b.Name.ToUpper().Contains(searchTerm.ToUpper()))
+                .OrderBy(a => a.Name);
+        }
+
         public IEnumerable<Author> GetAllAuthors()
         {
-            return _context
-                .Authors
+            return _context.Authors
                 .OrderBy(a => a.Name);
         }
 

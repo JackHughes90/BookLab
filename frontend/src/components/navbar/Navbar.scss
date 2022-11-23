@@ -39,4 +39,41 @@ nav.navbar {
     color: $text-colour-light;
     margin: 0;
   }
+
+  .search-form {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid $text-colour-light;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      i {
+        font-size: 20px;
+        margin-right: 8px;
+      }
+    }
+
+    input,
+    textarea {
+      margin-left: 4px;
+      border: none;
+      background-color: $primary;
+      font-family: "Ubuntu Mono", monospace;
+      font-size: 20px;
+      color: $text-colour-light;
+
+      &::placeholder {
+        color: $text-colour-light;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
 }

@@ -25,6 +25,20 @@ namespace BookLab.Controllers
             return new ListResponse<Author>(authors);
         }
 
+        [HttpGet("search/{searchTerm}")]
+        public ActionResult<ListResponse<Author>> GetAuthorsBySearch([FromRoute] string searchTerm)
+        {
+            try
+            {
+                var authors = _authors.GetAuthorsBySearch(searchTerm);
+                return new ListResponse<Author>(authors);
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
+        }
+
         [HttpGet("{authorId}")]
         public ActionResult<Author> GetAuthorById([FromRoute] int authorId)
         {

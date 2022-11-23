@@ -10,6 +10,7 @@ namespace BookLab.Repositories
     public interface IBookRepo
     {
         Book GetBookById(int bookId);
+        IEnumerable<Book> GetBooksBySearch(string searchTerm);
         Book CreateBook(Book newBook);
         IEnumerable<Book> GetAllBooks();
     }
@@ -31,6 +32,15 @@ namespace BookLab.Repositories
                 .Single(b => b.Id == bookId);
         }
 
+        public IEnumerable<Book> GetBooksBySearch(string searchTerm)
+        {
+            return _context.Books
+                .Include(b => b.Authors)
+                .Include(b => b.Genres)
+                .Where(b => b.Title.Contains(searchTerm))
+                .OrderBy(b => b.Title);
+        }
+
         public Book CreateBook(Book newBook)
         {
             var insertedBook = _context.Books.Add(newBook);
@@ -41,8 +51,7 @@ namespace BookLab.Repositories
 
         public IEnumerable<Book> GetAllBooks()
         {
-            return _context
-                .Books
+            return _context.Books
                 .Include(b => b.Authors)
                 .Include(b => b.Genres)
                 .OrderBy(b => b.Title);
